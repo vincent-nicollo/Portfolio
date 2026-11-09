@@ -3,17 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Nicollo Gutierrez - Portfolio</title>
+    <meta name="description" content="Portfolio of Vincent Nicollo A. Gutierrez - IT Student specializing in UI/UX Design, QA, and Technical Documentation.">
+    <title>Vincent Nicollo A. Gutierrez | Portfolio</title>
+    
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 80px auto; padding: 0 20px; text-align: center; color: #333; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        p { font-size: 1.2rem; color: #666; }
-        .tag { background: #e0e0e0; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; }
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --radius: 12px;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            background: #eff6ff;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+
+        .contact-links a:hover {
+            background: #dbeafe;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .project-role {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .embed-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #f1f5f9;
+            margin-bottom: 15px;
+        }
+
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            header {
+                padding: 20px 15px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .project-card {
+                padding: 18px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Vincent Nicollo A. Gutierrez</h1>
-    <p>IT Student | UI/UX Designer | QA Specialist</p>
-    <p><span class="tag">Portfolio Under Construction</span></p>
+
+    <div class="container">
+        
+        <header>
+            <h1>Vincent Nicollo A. Gutierrez</h1>
+            <div class="subtitle">UI/UX Design | Quality Assurance | Technical Documentation</div>
+            <p>BSIT Student at PHINMA Araullo University focused on creating intuitive user interfaces, writing thorough technical documentation, and executing functional QA testing.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:vincentgutierrez061@gmail.com">Email</a>
+                <a href="https://github.com/vince-nico" target="_blank">GitHub</a>
+            </div>
+        </header>
+
+        <section id="projects">
+            <h2 class="section-title">Projects & Case Studies</h2>
+
+            <div class="project-card">
+                <h3>AccounTech: Adaptive Board Preparation Tool</h3>
+                <div class="project-role">UI/UX Designer</div>
+                <p>Designed interactive wireframes, user flows, and prototype interfaces in Figma for an adaptive board exam preparation platform used by CMA students.</p>
+                
+                <div class="embed-container">
+                    <iframe src="https://embed.figma.com/design/b41m3g6IrfndzANHKoT4Xy/AccounTech?node-id=0-1&embed-host=share" allowfullscreen title="AccounTech Figma Preview"></iframe>
+                </div>
+
+                <p style="margin-top: 15px;">
+                    <a href="https://www.figma.com/design/b41m3g6IrfndzANHKoT4Xy/AccounTech?node-id=0-1" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.9rem;">
+                        View Full Figma File ↗
+                    </a>
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Dreamcut: Barbershop Appointment & Booking Management</h3>
+                <div class="project-role">Quality Assurance & Technical Documentation</div>
+                <p>Authored end-to-end user manuals, created structured test scenarios for booking and payment modules, and tracked defect logs prior to deployment.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Car Rental Management System</h3>
+                <div class="project-role">Quality Assurance Specialist</div>
+                <p>Executed functional and regression testing across key system modules to verify system stability and validate defect resolutions.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Skills & Capabilities</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Technical & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Competencies</h4>
+                    <div class="skill-tags">
+                        <span class="tag">UI/UX Prototyping</span>
+                        <span class="tag">Wireframing</span>
+                        <span class="tag">Quality Assurance</span>
+                        <span class="tag">Test Scenarios</span>
+                        <span class="tag">Technical Writing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Soft Skills</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Adaptability</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Team Collaboration</span>
+                        <span class="tag">Critical Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
 </body>
 </html>
